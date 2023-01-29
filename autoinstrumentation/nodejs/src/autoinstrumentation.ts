@@ -1,34 +1,8 @@
-import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-grpc';
-import { alibabaCloudEcsDetector } from '@opentelemetry/resource-detector-alibaba-cloud';
-import { awsEc2Detector, awsEksDetector } from '@opentelemetry/resource-detector-aws';
-import { containerDetector } from '@opentelemetry/resource-detector-container';
-import { gcpDetector } from '@opentelemetry/resource-detector-gcp';
-import { envDetector, hostDetector, osDetector, processDetector } from '@opentelemetry/resources';
+import { initialize } from 'helios-opentelemetry-sdk';
 
-import { NodeSDK } from '@opentelemetry/sdk-node';
-
-const sdk = new NodeSDK({
-    autoDetectResources: true,
-    instrumentations: [getNodeAutoInstrumentations()],
-    traceExporter: new OTLPTraceExporter(),
-    resourceDetectors:
-        [
-            // Standard resource detectors.
-            containerDetector,
-            envDetector,
-            hostDetector,
-            osDetector,
-            processDetector,
-
-            // Cloud resource detectors.
-            alibabaCloudEcsDetector,
-            // Ordered AWS Resource Detectors as per:
-            // https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourcedetectionprocessor/README.md#ordering
-            awsEksDetector,
-            awsEc2Detector,
-            gcpDetector,
-        ],
+initialize({
+    apiToken: process.env.HS_TOKEN!,
+    serviceName: process.env.SERVICE_NAME,
+    environment: process.env.HS_ENVIRONMENT,
+    enable: true,
 });
-
-sdk.start();
