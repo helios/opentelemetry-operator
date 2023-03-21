@@ -1,12 +1,12 @@
 import { initialize } from 'helios-opentelemetry-sdk';
 
-const API_TOKEN = process.env.HS_TOKEN || ''
-const SERVICE_NAME = process.env.HS_SERVICE || ''
-const ENVIRONMENT_NAME = process.env.HS_ENVIRONMENT || ''
+const apiToken = process.env.HS_TOKEN || ''
+const serviceName = process.env.HS_SERVICE || ''
+const environment = process.env.HS_ENVIRONMENT || ''
 
 initialize({
-    apiToken: API_TOKEN,       
-    serviceName: SERVICE_NAME, 
-    environment: ENVIRONMENT_NAME,
+    apiToken,       
+    serviceName, 
+    environment,
     enable: true
  });

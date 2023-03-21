@@ -14,6 +14,6 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "helios-opentelemetry-sdk": "1.0.50"
+    "helios-opentelemetry-sdk": "1.0.55"
   }
 }
