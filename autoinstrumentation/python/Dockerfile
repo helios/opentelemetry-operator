@@ -14,7 +14,9 @@ WORKDIR /operator-build
 
 ADD requirements.txt .
 
-RUN mkdir workspace && pip install --target workspace -r requirements.txt
+RUN mkdir workspace && apk update && apk add python3-dev gcc libc-dev linux-headers && pip install --target workspace -r requirements.txt
+
+ADD sitecustomize.py /operator-build/workspace/opentelemetry/instrumentation/auto_instrumentation
 
 FROM busybox
 
