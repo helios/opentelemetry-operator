@@ -6,6 +6,6 @@ FROM busybox
 
 ARG version
 
-ADD https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v$version/opentelemetry-javaagent.jar /javaagent.jar
+ADD https://github.com/helios/opentelemetry-java-instrumentation/releases/download/v1.0.3/opentelemetry-javaagent.jar /javaagent.jar
 
 RUN chmod -R go+r /javaagent.jar
