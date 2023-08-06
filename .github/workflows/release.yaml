@@ -31,5 +31,5 @@ jobs:
 
     - name: "refresh go proxy module info on release"
       run: |
-        OPERATOR_VERSION=$(git describe --tags)
+        OPERATOR_VERSION=0.0.2
         curl https://proxy.golang.org/github.com/open-telemetry/opentelemetry-operator/@v/${OPERATOR_VERSION}.info
