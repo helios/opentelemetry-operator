@@ -69,7 +69,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
-          push: false
+          push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           build-args: |
