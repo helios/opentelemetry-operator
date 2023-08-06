@@ -36,7 +36,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: gethelios/opentelemetry-operator
+          images: gethelios/open-telemetry/opentelemetry-operator
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
