@@ -57,7 +57,7 @@ The environment variable `CERTMANAGER_VERSION` can be used to override the cert-
 CERTMANAGER_VERSION=1.60 make cert-manager
 ```
 
-When deploying the operator into the cluster using `make deploy`, an image in the format `gethelios/${USER}/opentelemetry-operator` is generated. If this format isn't suitable, it can be overridden by:
+When deploying the operator into the cluster using `make deploy`, an image in the format `gethelios/` is generated. If this format isn't suitable, it can be overridden by:
 
 * `IMG_PREFIX`, to override the registry, namespace and image name
 * `USER`, to override the namespace

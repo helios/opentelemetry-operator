@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: gethelios/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs
+          images: gethelios/autoinstrumentation-nodejs
           tags: |
             type=match,pattern=v(.*),group=1,value=v${{ env.VERSION }}
 
