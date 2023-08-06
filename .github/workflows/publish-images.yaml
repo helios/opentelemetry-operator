@@ -30,7 +30,7 @@ jobs:
           grep -v '\#' versions.txt | grep autoinstrumentation-dotnet | awk -F= '{print "AUTO_INSTRUMENTATION_DOTNET_VERSION="$2}' >> $GITHUB_ENV
           grep -v '\#' versions.txt | grep autoinstrumentation-apache-httpd | awk -F= '{print "AUTO_INSTRUMENTATION_APACHE_HTTPD_VERSION="$2}' >> $GITHUB_ENV
           echo "VERSION_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
-          echo "VERSION=0.0.1" >> $GITHUB_ENV
+          echo "VERSION=0.0.2" >> $GITHUB_ENV
 
       - name: Docker meta
         id: docker_meta
