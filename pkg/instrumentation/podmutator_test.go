@@ -149,7 +149,7 @@ func TestMutatePod(t *testing.T) {
 								},
 								{
 									Name:  "OTEL_INSTRUMENTATION_JDBC_ENABLED",
-									Value: "false",
+									Value: "",
 								},
 								{
 									Name:  "SPLUNK_PROFILER_ENABLED",
@@ -323,6 +323,10 @@ func TestMutatePod(t *testing.T) {
 								{
 									Name:  "NODE_OPTIONS",
 									Value: nodeRequireArgument,
+								},
+								{
+									Name:  "HS_IMAGE_NAME",
+									Value: "",
 								},
 								{
 									Name:  "OTEL_TRACES_EXPORTER",
