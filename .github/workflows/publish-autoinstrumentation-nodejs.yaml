@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs
+          images: gethelios/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs
           tags: |
             type=match,pattern=v(.*),group=1,value=v${{ env.VERSION }}
 
@@ -48,9 +48,8 @@ jobs:
       - name: Login to GitHub Package Registry
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: gethelios
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v3

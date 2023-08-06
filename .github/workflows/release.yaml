@@ -2,6 +2,7 @@ name: "Prepare the release"
 on:
   push:
     tags: [ 'v*' ]
+  workflow_dispatch:  
 
 jobs:
   release:
@@ -21,7 +22,7 @@ jobs:
       run: ./hack/install-kustomize.sh
 
     - name: "generate release resources"
-      run: make release-artifacts IMG_PREFIX="ghcr.io/open-telemetry/opentelemetry-operator"
+      run: make release-artifacts IMG_PREFIX="gethelios/open-telemetry/opentelemetry-operator"
 
     - name: "create the release in GitHub"
       env:

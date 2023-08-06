@@ -13,7 +13,7 @@ LD_FLAGS ?= "-X ${VERSION_PKG}.version=${VERSION} -X ${VERSION_PKG}.buildDate=${
 ARCH ?= $(shell go env GOARCH)
 
 # Image URL to use all building/pushing image targets
-IMG_PREFIX ?= ghcr.io/${USER}/opentelemetry-operator
+IMG_PREFIX ?= gethelios/${USER}/opentelemetry-operator
 IMG_REPO ?= opentelemetry-operator
 IMG ?= ${IMG_PREFIX}/${IMG_REPO}:${VERSION}
 BUNDLE_IMG ?= ${IMG_PREFIX}/${IMG_REPO}-bundle:${VERSION}
