@@ -148,7 +148,7 @@ func TestMutatePod(t *testing.T) {
 									Value: "true",
 								},
 								{
-									Name: "OTEL_INSTRUMENTATION_JDBC_ENABLED",
+									Name:  "OTEL_INSTRUMENTATION_JDBC_ENABLED",
 									Value: "false",
 								},
 								{
