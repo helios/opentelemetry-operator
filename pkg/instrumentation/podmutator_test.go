@@ -149,6 +149,7 @@ func TestMutatePod(t *testing.T) {
 								},
 								{
 									Name: "OTEL_INSTRUMENTATION_JDBC_ENABLED",
+									Value: "false",
 								},
 								{
 									Name:  "SPLUNK_PROFILER_ENABLED",
