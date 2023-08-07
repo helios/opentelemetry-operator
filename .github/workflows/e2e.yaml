@@ -52,7 +52,7 @@ jobs:
     - name: "run tests"
       env:
         KUBE_VERSION: ${{ matrix.kube-version }}
-      run: make prepare-e2e ${{ matrix.group }} KUBE_VERSION=$KUBE_VERSION VERSION=e2e
+      run: make prepare-e2e ${{ matrix.group }} KUBE_VERSION=$KUBE_VERSION VERSION=0.0.4
 
     - name: "log operator if failed"
       if: ${{ failure() }}
