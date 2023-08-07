@@ -64,8 +64,10 @@ func injectNodeJSSDK(nodeJSSpec v1alpha1.NodeJS, pod corev1.Pod, index int) (cor
 		container.Env[idx].Value = container.Env[idx].Value + nodeRequireArgument
 	}
 	injectEnvVarIfNotExists(container, envImageName, container.Image)
-	containerStatus := pod.Status.ContainerStatuses[index]
-	injectEnvVarIfNotExists(container, envImageId, containerStatus.ImageID)
+	if len(pod.Status.ContainerStatuses) >= index+1 {
+		containerStatus := pod.Status.ContainerStatuses[index]
+		injectEnvVarIfNotExists(container, envImageId, containerStatus.ImageID)
+	}
 
 	container.VolumeMounts = append(container.VolumeMounts, corev1.VolumeMount{
 		Name:      volumeName,

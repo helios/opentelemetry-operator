@@ -16,6 +16,8 @@ spec:
       value: " --require /otel-auto-instrumentation/autoinstrumentation.js"
     - name: HS_IMAGE_NAME
       value: ""
+    - name: HS_IMAGE_ID
+      value: ""
     - name: OTEL_TRACES_EXPORTER
       value: otlp
     - name: OTEL_EXPORTER_OTLP_ENDPOINT
