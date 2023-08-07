@@ -24,6 +24,7 @@ const (
 	envNodeOptions      = "NODE_OPTIONS"
 	nodeRequireArgument = " --require /otel-auto-instrumentation/autoinstrumentation.js"
 	envImageName        = "HS_IMAGE_NAME"
+	envImageId          = "HS_IMAGE_ID"
 )
 
 func injectEnvVarIfNotExists(container *corev1.Container, envVarName, envVarValue string) {
@@ -63,6 +64,8 @@ func injectNodeJSSDK(nodeJSSpec v1alpha1.NodeJS, pod corev1.Pod, index int) (cor
 		container.Env[idx].Value = container.Env[idx].Value + nodeRequireArgument
 	}
 	injectEnvVarIfNotExists(container, envImageName, container.Image)
+	containerStatus := pod.Status.ContainerStatuses[index]
+	injectEnvVarIfNotExists(container, envImageId, containerStatus.ImageID)
 
 	container.VolumeMounts = append(container.VolumeMounts, corev1.VolumeMount{
 		Name:      volumeName,
