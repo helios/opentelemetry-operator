@@ -23,7 +23,18 @@ import (
 const (
 	envNodeOptions      = "NODE_OPTIONS"
 	nodeRequireArgument = " --require /otel-auto-instrumentation/autoinstrumentation.js"
+	envImageName        = "HS_IMAGE_NAME"
 )
+
+func injectEnvVarIfNotExists(container *corev1.Container, envVarName, envVarValue string) {
+	idx := getIndexOfEnv(container.Env, envVarName)
+	if idx == -1 {
+		container.Env = append(container.Env, corev1.EnvVar{
+			Name:  envVarName,
+			Value: envVarValue,
+		})
+	}
+}
 
 func injectNodeJSSDK(nodeJSSpec v1alpha1.NodeJS, pod corev1.Pod, index int) (corev1.Pod, error) {
 	// caller checks if there is at least one container.
@@ -51,6 +62,7 @@ func injectNodeJSSDK(nodeJSSpec v1alpha1.NodeJS, pod corev1.Pod, index int) (cor
 	} else if idx > -1 {
 		container.Env[idx].Value = container.Env[idx].Value + nodeRequireArgument
 	}
+	injectEnvVarIfNotExists(container, envImageName, container.Image)
 
 	container.VolumeMounts = append(container.VolumeMounts, corev1.VolumeMount{
 		Name:      volumeName,

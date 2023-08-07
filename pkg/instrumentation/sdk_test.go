@@ -534,6 +534,10 @@ func TestInjectNodeJS(t *testing.T) {
 							Value: nodeRequireArgument,
 						},
 						{
+							Name:  "HS_IMAGE_NAME",
+							Value: "",
+						},
+						{
 							Name:  "OTEL_SERVICE_NAME",
 							Value: "app",
 						},

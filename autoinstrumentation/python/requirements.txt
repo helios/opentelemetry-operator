@@ -1,1 +1,1 @@
-helios-opentelemetry-sdk=v1.0.66
+helios-opentelemetry-sdk==v1.0.66
