@@ -15,7 +15,7 @@ spec:
     - name: NODE_OPTIONS
       value: " --require /otel-auto-instrumentation/autoinstrumentation.js"
     - name: HS_IMAGE_NAME
-      value: "ghcr.io/anuraaga/express-hello-world"
+      value: "ghcr.io/anuraaga/express-hello-world:latest"
     - name: OTEL_TRACES_EXPORTER
       value: otlp
     - name: OTEL_EXPORTER_OTLP_ENDPOINT
