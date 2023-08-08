@@ -39,7 +39,7 @@ spec:
             storage: 1Gi
   targetAllocator:
     enabled: true
-    image: gethelios/target-allocator:v0.0.4
+    image: "local/opentelemetry-operator-targetallocator:e2e"
     serviceAccount: ta
     prometheusCR:
       enabled: true

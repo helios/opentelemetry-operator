@@ -27,7 +27,7 @@ spec:
   targetAllocator:
     enabled: true
     serviceAccount: ta
-    image: gethelios/target-allocator:v0.0.4
+    image: "local/opentelemetry-operator-targetallocator:e2e"
   config: |
     receivers:
       jaeger:
