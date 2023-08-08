@@ -15,6 +15,8 @@ spec:
       value: ' --require /otel-auto-instrumentation/autoinstrumentation.js'
     - name: OTEL_TRACES_EXPORTER
       value: otlp
+    - name: HS_IMAGE_NAME
+      value: "ghcr.io/anuraaga/express-hello-world"
     - name: OTEL_EXPORTER_OTLP_ENDPOINT
       value: http://localhost:4317
     - name: OTEL_EXPORTER_OTLP_TIMEOUT
@@ -44,6 +46,8 @@ spec:
       value: otlp
     - name: OTEL_EXPORTER_OTLP_ENDPOINT
       value: http://localhost:4317
+    - name: HS_IMAGE_NAME
+      value: "rabbitmq"  
     - name: OTEL_EXPORTER_OTLP_TIMEOUT
       value: "20"
     - name: OTEL_TRACES_SAMPLER
