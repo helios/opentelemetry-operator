@@ -329,10 +329,6 @@ func TestMutatePod(t *testing.T) {
 									Value: "",
 								},
 								{
-									Name:  "HS_IMAGE_ID",
-									Value: "",
-								},
-								{
 									Name:  "OTEL_TRACES_EXPORTER",
 									Value: "otlp",
 								},

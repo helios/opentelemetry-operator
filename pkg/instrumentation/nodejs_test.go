@@ -76,6 +76,10 @@ func TestInjectNodeJSSDK(t *testing.T) {
 									Name:  "NODE_OPTIONS",
 									Value: nodeRequireArgument,
 								},
+								{
+									Name:  "HS_IMAGE_NAME",
+									Value: "",
+								},
 							},
 						},
 					},
@@ -133,6 +137,10 @@ func TestInjectNodeJSSDK(t *testing.T) {
 								{
 									Name:  "NODE_OPTIONS",
 									Value: "-Dbaz=bar" + nodeRequireArgument,
+								},
+								{
+									Name:  "HS_IMAGE_NAME",
+									Value: "",
 								},
 							},
 						},
