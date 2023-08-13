@@ -325,6 +325,10 @@ func TestMutatePod(t *testing.T) {
 									Value: nodeRequireArgument,
 								},
 								{
+									Name:  "HS_IMAGE_NAME",
+									Value: "",
+								},
+								{
 									Name:  "OTEL_TRACES_EXPORTER",
 									Value: "otlp",
 								},
