@@ -538,10 +538,6 @@ func TestInjectNodeJS(t *testing.T) {
 							Value: "",
 						},
 						{
-							Name:  "HS_IMAGE_ID",
-							Value: "",
-						},
-						{
 							Name:  "OTEL_SERVICE_NAME",
 							Value: "app",
 						},
