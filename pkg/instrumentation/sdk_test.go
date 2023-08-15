@@ -512,7 +512,7 @@ func TestInjectNodeJS(t *testing.T) {
 				{
 					Name:    initContainerName,
 					Image:   "img:1",
-					Command: []string{"cp", "-a", "/autoinstrumentation/.", "/otel-auto-instrumentation/"},
+					Command: []string{"./setup.sh"},
 					VolumeMounts: []corev1.VolumeMount{{
 						Name:      volumeName,
 						MountPath: "/otel-auto-instrumentation",

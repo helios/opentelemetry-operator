@@ -56,7 +56,7 @@ func TestInjectNodeJSSDK(t *testing.T) {
 						{
 							Name:    initContainerName,
 							Image:   "foo/bar:1",
-							Command: []string{"cp", "-a", "/autoinstrumentation/.", "/otel-auto-instrumentation/"},
+							Command: []string{"./setup.sh"},
 							VolumeMounts: []corev1.VolumeMount{{
 								Name:      volumeName,
 								MountPath: "/otel-auto-instrumentation",
@@ -118,7 +118,7 @@ func TestInjectNodeJSSDK(t *testing.T) {
 						{
 							Name:    initContainerName,
 							Image:   "foo/bar:1",
-							Command: []string{"cp", "-a", "/autoinstrumentation/.", "/otel-auto-instrumentation/"},
+							Command: []string{"./setup.sh"},
 							VolumeMounts: []corev1.VolumeMount{{
 								Name:      volumeName,
 								MountPath: "/otel-auto-instrumentation",

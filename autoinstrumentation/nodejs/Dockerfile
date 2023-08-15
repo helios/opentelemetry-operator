@@ -17,5 +17,6 @@ RUN npm install
 FROM busybox
 
 COPY --from=build /operator-build/build/workspace /autoinstrumentation
+COPY --from=build /operator-build/setup.sh /
 
 RUN chmod -R go+r /autoinstrumentation
